@@ -6,6 +6,11 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as listActions from '../actions/todoListActions'
 class App extends Component {
+
+  componentDidMount(){
+    this.props.fetchList('https://reqres.in/api/users?page=2')
+  }
+
   render() {
     return (
       <div className="App">
@@ -16,7 +21,7 @@ class App extends Component {
         {/* <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p> */}
-        <TodoList/>
+        <TodoList list={this.props.todoList.data}/>
       </div>
     );
   }
@@ -30,7 +35,8 @@ function mapStateToProps (state) {
 
 function mapDispatchToProps (dispatch) {
   return bindActionCreators({
-    addEvent: listActions.addEvent
+    addEvent: listActions.addEvent,
+    fetchList: listActions.fetchList
   }, dispatch)
 }
 

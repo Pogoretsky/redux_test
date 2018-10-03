@@ -1,13 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import TodoRow from './TodoRow' 
 
 
-const todoList = () =>{
-    return (
-      <div className="todo-list">
-        <TodoRow/>
-      </div>
-    );
-}
+const todoList = ({list = []}) =>{
+    list.map(item => {
+        return (
+          <div key={item.id} className="todo-list">
+            <TodoRow profile={item}/>
+          </div>
+        );
+    })
+};
 
 export default todoList;

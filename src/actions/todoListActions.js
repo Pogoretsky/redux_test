@@ -7,4 +7,12 @@ export const addEvent = (actionData) => {
     }
 }
 
+export const fetchList = (actionData) => {
+    return {
+        type: 'TODO_LIST_FETCH_REQUESTED',
+        payload: {
+            url: actionData
+        }
+    }
+}
  

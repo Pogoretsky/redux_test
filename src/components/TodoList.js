@@ -3,13 +3,13 @@ import TodoRow from './TodoRow'
 
 
 const todoList = ({list = []}) =>{
-    list.map(item => {
-        return (
-          <div key={item.id} className="todo-list">
-            <TodoRow profile={item}/>
-          </div>
-        );
-    })
+  return <div className="todo-list">
+    {list.map(item => {
+      return (
+        <TodoRow key={item.id} profile={item}/>
+      );
+    })}
+  </div>
 };
 
 export default todoList;

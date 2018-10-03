@@ -12,6 +12,7 @@ class App extends Component {
   }
 
   render() {
+    console.log('this.props.todoList.data',this.props.todoList.data)
     return (
       <div className="App">
         <header className="App-header">

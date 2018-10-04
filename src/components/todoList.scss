@@ -1,0 +1,70 @@
+
+.todo-list{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .classes-state-root{
+        margin: 50px;
+    }
+    .classes-state-circle{
+        color: lightseagreen;
+    }
+}
+.todo-row{
+    width: 60%;
+    padding: 16px;
+    margin: 8px;
+    // border: 1px solid #000;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+    display: flex;
+    justify-content: center;
+    span{
+        flex-grow: 2;
+    }
+    button{
+        cursor: pointer;
+    }
+}
+.todo-input{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    label{
+        margin-bottom: 8px;
+    }
+    .todo-input_container{
+        width: 50%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        input{
+            padding: 8px;
+            flex-grow: 2;
+            margin-right: 16px;
+            font-size: 0.75em;
+        }
+        button{
+            border: none;
+            outline: none;
+            padding: 8px;
+            background-color: #198e88;
+            box-shadow: 0 4px 2px 0 lightseagreen;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 0.75em;
+            flex-grow: 1.25;
+            cursor: pointer;
+            &:hover{
+                background-color: #198e88;
+                
+            }
+            &:active{
+                background-color: lightseagreen;
+                box-shadow: 0 0 2px 0 lightseagreen;
+                transform: translateY(4px)
+            }
+        }
+    }
+}

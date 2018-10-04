@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 import TodoList from '../components/TodoList'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as listActions from '../actions/todoListActions'
+
 class App extends Component {
 
   componentDidMount(){
@@ -12,17 +12,17 @@ class App extends Component {
   }
 
   render() {
-    console.log('this.props.todoList.data',this.props.todoList.data)
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <h1 className="App-title">Something like todo list :)</h1>
         </header>
-        {/* <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p> */}
-        <TodoList list={this.props.todoList.data}/>
+        <TodoList
+          fetchStatus={this.props.todoList.fetchStatus} 
+          list={this.props.todoList.data} 
+          addEvent={this.props.addEvent} 
+          deleteEvent={this.props.deleteEvent}
+        />
       </div>
     );
   }
@@ -37,6 +37,7 @@ function mapStateToProps (state) {
 function mapDispatchToProps (dispatch) {
   return bindActionCreators({
     addEvent: listActions.addEvent,
+    deleteEvent: listActions.deleteEvent,
     fetchList: listActions.fetchList
   }, dispatch)
 }
